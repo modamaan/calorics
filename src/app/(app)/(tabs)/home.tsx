@@ -23,7 +23,7 @@ import { getUserProfile, getDailyLog } from '@/lib/api/firestore';
 import { useDateContext } from '@/context/DateContext';
 
 export default function HomeScreen() {
-  const { signOut } = useAuth();
+  const { signOut, userId } = useAuth();
   const { user } = useUser();
 
   const displayName = user?.firstName ?? user?.username;
@@ -110,7 +110,7 @@ export default function HomeScreen() {
           <CaloriesCard goal={goals} consumed={consumed} />
           <WaterCard goalLiters={goals.water} consumedLiters={consumed.water} />
           
-          <RecentActivity />
+          <RecentActivity userId={userId ?? null} />
           
           {/* Dev Sign Out */}
           <View style={{ marginTop: 24, alignItems: 'center' }}>

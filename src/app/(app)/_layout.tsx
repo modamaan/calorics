@@ -69,6 +69,7 @@ export default function AppLayout() {
         <Stack.Screen name="log-exercise" options={{ headerShown: false }} />
         <Stack.Screen name="log-exercise-details" options={{ headerShown: false }} />
         <Stack.Screen name="log-manual-exercise" options={{ headerShown: false }} />
+        <Stack.Screen name="add-water" options={{ headerShown: false }} />
       </Stack>
     </DateProvider>
   );

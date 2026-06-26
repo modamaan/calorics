@@ -30,7 +30,7 @@ function CustomTabBar({ state, descriptors, navigation }: any) {
     if (action === 'food') {
       router.push('/add-meal');
     } else if (action === 'water') {
-      router.push('/edit-water');
+      router.push('/add-water');
     } else if (action === 'exercise') {
       router.push('/log-exercise');
     } else if (action === 'scan') {

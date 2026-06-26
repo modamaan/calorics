@@ -3,12 +3,10 @@ import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { Colors, Radius, Spacing, FontSize, FontWeight } from '@/constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { ActivityLog, getActivities } from '@/lib/api/firestore';
-import { useAuth } from '@clerk/expo';
 import { useDateContext } from '@/context/DateContext';
 import { useFocusEffect } from 'expo-router';
 
-export function RecentActivity() {
-  const { userId } = useAuth();
+export function RecentActivity({ userId }: { userId: string | null }) {
   const { selectedDate } = useDateContext();
   const [activities, setActivities] = useState<ActivityLog[]>([]);
   const [loading, setLoading] = useState(true);
